@@ -10,8 +10,8 @@ published_at: 2020-11-04T15:53:38.567Z
 updated_at: 2020-11-04T15:53:38.583Z
 category: tutorial
 tags:
-  - Gradle
-  - Android
+  - gradle
+  - android
 comments: true
 spotlight: false
 redirect: ""
