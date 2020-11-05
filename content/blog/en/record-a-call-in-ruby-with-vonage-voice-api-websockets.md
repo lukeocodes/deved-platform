@@ -39,7 +39,7 @@ We can now move on to begin our application implementation.
 
 ## Vonage API Account
 
-To complete this tutorial, you will need a [Vonage API account](http://developer.nexmo.com/ed?c=blog_text&ct=2020-08-04-record-a-call-in-ruby-with-vonage-voice-api-websockets). If you don’t have one already, you can [sign up today](http://developer.nexmo.com/ed?c=blog_text&ct=2020-08-04-record-a-call-in-ruby-with-vonage-voice-api-websockets) and start building with free credit. Once you have an account, you can find your API Key and API Secret at the top of the [Vonage API Dashboard](http://developer.nexmo.com/ed?c=blog_text&ct=2020-08-04-record-a-call-in-ruby-with-vonage-voice-api-websockets).
+<sign-up></sign-up>
 
 This tutorial also uses a virtual phone number. To purchase one, go to *Numbers > [Buy Numbers](https://dashboard.nexmo.com/buy-numbers)* and search for one that meets your needs. 
 
