@@ -12,8 +12,8 @@ published_at: 2017-10-20T13:09:38.000Z
 comments: true
 category: tutorial
 tags: []
-canonical: https://www.nexmo.com/blog/2017/10/20/text-to-speech-voice-calls-with-php-dr
-redirect: https://www.nexmo.com/blog/2017/10/20/text-to-speech-voice-calls-with-php-dr
+canonical: https://www.nexmo.com/legacy-blog/2017/10/20/text-to-speech-voice-calls-with-php-dr
+redirect: https://www.nexmo.com/legacy-blog/2017/10/20/text-to-speech-voice-calls-with-php-dr
 ---
 
 Content to be migrated...

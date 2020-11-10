@@ -11,8 +11,8 @@ published_at: 2020-01-29T18:37:14.000Z
 comments: true
 category: tutorial
 tags: []
-canonical: https://www.nexmo.com/blog/2020/01/29/how-send-receive-sms-messages-with-node-js-azure-functions-dr
-redirect: https://www.nexmo.com/blog/2020/01/29/how-send-receive-sms-messages-with-node-js-azure-functions-dr
+canonical: https://www.nexmo.com/legacy-blog/2020/01/29/how-send-receive-sms-messages-with-node-js-azure-functions-dr
+redirect: https://www.nexmo.com/legacy-blog/2020/01/29/how-send-receive-sms-messages-with-node-js-azure-functions-dr
 ---
 
 Content to be migrated...

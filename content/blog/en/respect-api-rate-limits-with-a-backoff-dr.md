@@ -14,8 +14,8 @@ category: tutorial
 tags:
   - backoff
   - python
-canonical: https://www.nexmo.com/blog/2020/10/22/respect-api-rate-limits-with-a-backoff-dr
-redirect: https://www.nexmo.com/blog/2020/10/22/respect-api-rate-limits-with-a-backoff-dr
+canonical: https://www.nexmo.com/legacy-blog/2020/10/22/respect-api-rate-limits-with-a-backoff-dr
+redirect: https://www.nexmo.com/legacy-blog/2020/10/22/respect-api-rate-limits-with-a-backoff-dr
 ---
 
 Content to be migrated...

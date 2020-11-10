@@ -12,8 +12,8 @@ published_at: 2019-09-24T12:54:23.000Z
 comments: true
 category: tutorial
 tags: []
-canonical: https://www.nexmo.com/blog/2019/09/24/how-to-build-a-dashboard-of-live-conversations-with-flask-and-react-dr
-redirect: https://www.nexmo.com/blog/2019/09/24/how-to-build-a-dashboard-of-live-conversations-with-flask-and-react-dr
+canonical: https://www.nexmo.com/legacy-blog/2019/09/24/how-to-build-a-dashboard-of-live-conversations-with-flask-and-react-dr
+redirect: https://www.nexmo.com/legacy-blog/2019/09/24/how-to-build-a-dashboard-of-live-conversations-with-flask-and-react-dr
 ---
 
 Content to be migrated...

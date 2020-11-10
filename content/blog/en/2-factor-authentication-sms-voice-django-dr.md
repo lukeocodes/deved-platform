@@ -13,8 +13,8 @@ category: tutorial
 tags:
   - 2fa
   - python
-canonical: https://www.nexmo.com/blog/2017/07/13/2-factor-authentication-sms-voice-django-dr
-redirect: https://www.nexmo.com/blog/2017/07/13/2-factor-authentication-sms-voice-django-dr
+canonical: https://www.nexmo.com/legacy-blog/2017/07/13/2-factor-authentication-sms-voice-django-dr
+redirect: https://www.nexmo.com/legacy-blog/2017/07/13/2-factor-authentication-sms-voice-django-dr
 ---
 
 Content to be migrated...
