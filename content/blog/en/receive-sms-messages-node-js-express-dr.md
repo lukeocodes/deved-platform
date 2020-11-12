@@ -18,15 +18,15 @@ canonical: https://www.nexmo.com/blog/2016/10/27/receive-sms-messages-node-js-ex
 outdated: true
 replacement_url: https://learn.vonage.com/blog/2019/09/16/how-to-send-and-receive-sms-messages-with-node-js-and-express-dr
 ---
-*This is the second article in a series of “Getting Started with Nexmo and Node.js” tutorials.*
+*This is the second article in a series of “Getting Started with Vonage and Node.js” tutorials.*
 
-In the previous article, you set up your Nexmo account and learned [how to send SMS messages with Node.js](/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr/). In this article, you will learn about receiving an inbound SMS by implementing a webhook endpoint in Node.js using [Express](http://expressjs.com/).
+In the previous article, you set up your Vonage account and learned [how to send SMS messages with Node.js](/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr/). In this article, you will learn about receiving an inbound SMS by implementing a webhook endpoint in Node.js using [Express](http://expressjs.com/).
 
 <img style="width: 32px;height: 32px" src="https://www.nexmo.com/wp-content/uploads/2016/10/GitHub-Mark-64px.png" alt="GitHub icon" /> **View** **[the source code on GitHub](https://github.com/nexmo-community/nexmo-node-quickstart/blob/master/sms/receive-express.js)**
 
 ## Defining a Webhook Endpoint
 
-In order to receive an SMS from Nexmo you need to associate a webhook endpoint (URL) with a virtual number that you have rented from Nexmo. [Inbound Messages](https://docs.nexmo.com/messaging/sms-api#inbound) to that number are then sent to your webhook endpoint.
+In order to receive an SMS from Vonage you need to associate a webhook endpoint (URL) with a virtual number that you have rented from Vonage. [Inbound Messages](https://docs.nexmo.com/messaging/sms-api#inbound) to that number are then sent to your webhook endpoint.
 
 ![A diagram showing how a SMS is received from a user](https://www.nexmo.com/wp-content/uploads/2016/10/diagram-receive.png)
 
@@ -44,9 +44,9 @@ $ ngrok http 3000
 
 Your local server (localhost:3000) now has a ngrok URL, `https://71f03962.ngrok.io` that can be used as your webhook endpoint during development (also, notice the Web Interface URL - I will explain it later!).
 
-### Setting the Webhook Endpoint with Nexmo
+### Setting the Webhook Endpoint with Vonage
 
-Sign in to your Nexmo account, and go to [Settings](https://dashboard.nexmo.com/settings). Scroll all way down to **API Settings** and fill out the **Callback URL for Inbound Message** with the ngrok URL with a route, let’s call it inbound, enter `https://71f03962.ngrok.io/inbound`, and let's set the **HTTP Method** to `POST` then save.
+Sign in to your Vonage account, and go to [Settings](https://dashboard.nexmo.com/settings). Scroll all way down to **API Settings** and fill out the **Callback URL for Inbound Message** with the ngrok URL with a route, let’s call it inbound, enter `https://71f03962.ngrok.io/inbound`, and let's set the **HTTP Method** to `POST` then save.
 
 ![setting your webhook endpoint](https://www.nexmo.com/wp-content/uploads/2016/10/webhook-endpoint.png)
 
@@ -114,7 +114,7 @@ When you are tunneling your local app with ngrok, you can also inspect the reque
 
 ![ngrok inspector](https://www.nexmo.com/wp-content/uploads/2016/10/ngrok-inspector.png)
 
-Voilà, now you can see your SMS message has been sent, Nexmo has received the message and passed it on to your express application via a webhook!
+Voilà, now you can see your SMS message has been sent, Vonage has received the message and passed it on to your express application via a webhook!
 
 If you take a look at the [code sample in GitHub](https://github.com/nexmo-community/nexmo-node-quickstart), you will notice the extra example - a persist data storage (like the HTML5 Local Storage, but for Node) and the incoming data is stored with each key (message ID) and values. That way, you can set up a `/inbound/:id` route parameter as named URL segment. For instance, when you access http://localhost:3000/inbound/080000001947F7B2, it returns:
 
@@ -128,9 +128,9 @@ I hope you find this useful. Let me know, I'm [@girlie_mac on Twitter](https://t
 
 ## References
 
-* Nexmo SMS REST API [https://docs.nexmo.com/messaging/sms-api](https://docs.nexmo.com/messaging/sms-api)
+* Vonage SMS API [https://docs.nexmo.com/messaging/sms-api](https://docs.nexmo.com/messaging/sms-api)
 
-* Nexmo Webhooks [https://docs.nexmo.com/messaging/setup-callbacks](https://docs.nexmo.com/messaging/setup-callbacks)
+* Vonage Webhooks [https://developer.nexmo.com/messaging/sms/overview](https://developer.nexmo.com/messaging/sms/overview)
 
 * Ngrok [https://ngrok.com/](https://ngrok.com/)
 
