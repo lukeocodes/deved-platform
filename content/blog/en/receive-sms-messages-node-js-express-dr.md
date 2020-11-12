@@ -44,7 +44,7 @@ $ ngrok http 3000
 
 Your local server (localhost:3000) now has a ngrok URL, `https://71f03962.ngrok.io` that can be used as your webhook endpoint during development (also, notice the Web Interface URL - I will explain it later!).
 
-### Setting the Webhook Endpoint with Vonage
+### Setting the Webhook Endpoint With Vonage
 
 Sign in to your Vonage account, and go to [Settings](https://dashboard.nexmo.com/settings). Scroll all way down to **API Settings** and fill out the **Callback URL for Inbound Message** with the ngrok URL with a route, let’s call it inbound, enter `https://71f03962.ngrok.io/inbound`, and let's set the **HTTP Method** to `POST` then save.
 
@@ -54,7 +54,7 @@ Now all your incoming messages will go to the webhook (callback) URL, so let’s
 
 *Note: Above we're setting the webhook endpoint for SMS at an account level. But you can also set up unique webhook endpoints for each virtual number.*
 
-## Writing WebHook Endpoints with Express
+## Writing Webhook Endpoints With Express
 
 Now, handle the `POST` requests with [Express](https://expressjs.com/), so you will also need to install body-parser.
 
