@@ -22,7 +22,7 @@ Welcome to the internet! If you've been here for more than five minutes, you've 
 
 ## Out of Bounds
 
-There are a few processes you should put in place that are outside the bounds of this post. We'll discuss a few of them conceptually, but implementation specifics are dependant on your applications' architecture.
+There are a few processes you should put in place that are outside the bounds of this post. We'll discuss a few of them conceptually, but implementation specifics are dependent on your applications' architecture.
 
 ### You're Out of Here
 
