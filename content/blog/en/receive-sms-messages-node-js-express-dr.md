@@ -1,19 +1,136 @@
 ---
 title: How to Receive SMS Messages with Node.js and Express
-description: This is the second article in a series of “Getting Started with
-  Nexmo and Node.js” tutorials. In the previous article, you set up your Nexmo
-  account and learned how to send SMS messages with Node.js. In this article,
-  you will learn about receiving an inbound SMS by implementing a webhook
-  endpoint in Node.js using Express. […]
+description: A step-by-step tutorial on how to receive SMS messages and write a
+  webhook with Node.js and ExpressJS using the Nexmo SMS API.
 thumbnail: /content/blog/receive-sms-messages-node-js-express-dr/sms-receive-node.png
 author: tomomi
 published: true
 published_at: 2016-10-27T18:35:15.000Z
-comments: true
+updated_at: 2020-11-12T14:03:27.553Z
 category: tutorial
-tags: []
+tags:
+  - express
+  - nodejs
+  - sms-api
+comments: true
+redirect: ""
 canonical: https://www.nexmo.com/blog/2016/10/27/receive-sms-messages-node-js-express-dr
-redirect: https://www.nexmo.com/blog/2016/10/27/receive-sms-messages-node-js-express-dr
+outdated: true
+replacement_url: https://learn.vonage.com/blog/2019/09/16/how-to-send-and-receive-sms-messages-with-node-js-and-express-dr
 ---
+*This is the second article in a series of “Getting Started with Nexmo and Node.js” tutorials.*
 
-Content to be migrated...
+In the previous article, you set up your Nexmo account and learned [how to send SMS messages with Node.js](/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr/). In this article, you will learn about receiving an inbound SMS by implementing a webhook endpoint in Node.js using [Express](http://expressjs.com/).
+
+<img style="width: 32px;height: 32px" src="https://www.nexmo.com/wp-content/uploads/2016/10/GitHub-Mark-64px.png" alt="GitHub icon" /> **View** **[the source code on GitHub](https://github.com/nexmo-community/nexmo-node-quickstart/blob/master/sms/receive-express.js)**
+
+## Defining a Webhook Endpoint
+
+In order to receive an SMS from Nexmo you need to associate a webhook endpoint (URL) with a virtual number that you have rented from Nexmo. [Inbound Messages](https://docs.nexmo.com/messaging/sms-api#inbound) to that number are then sent to your webhook endpoint.
+
+![A diagram showing how a SMS is received from a user](https://www.nexmo.com/wp-content/uploads/2016/10/diagram-receive.png)
+
+While you are developing the webhook endpoint, it is a pain to keep deploying your work in progress. To make your life easier, let’s use [**ngrok**](https://ngrok.com/) to expose your webhook endpoint on your local machine as a public URL!
+
+### Using ngrok
+
+First, download ngrok from [https://ngrok.com](https://ngrok.com). Once installed, run ngrok on terminal:
+
+```bash
+$ ngrok http 3000
+```
+
+![running ngrok](https://www.nexmo.com/wp-content/uploads/2016/10/ngrok.png)
+
+Your local server (localhost:3000) now has a ngrok URL, `https://71f03962.ngrok.io` that can be used as your webhook endpoint during development (also, notice the Web Interface URL - I will explain it later!).
+
+### Setting the Webhook Endpoint with Nexmo
+
+Sign in to your Nexmo account, and go to [Settings](https://dashboard.nexmo.com/settings). Scroll all way down to **API Settings** and fill out the **Callback URL for Inbound Message** with the ngrok URL with a route, let’s call it inbound, enter `https://71f03962.ngrok.io/inbound`, and let's set the **HTTP Method** to `POST` then save.
+
+![setting your webhook endpoint](https://www.nexmo.com/wp-content/uploads/2016/10/webhook-endpoint.png)
+
+Now all your incoming messages will go to the webhook (callback) URL, so let’s write some code with Node.js and Express!
+
+*Note: Above we're setting the webhook endpoint for SMS at an account level. But you can also set up unique webhook endpoints for each virtual number.*
+
+## Writing WebHook Endpoints with Express
+
+Now, handle the `POST` requests with [Express](https://expressjs.com/), so you will also need to install body-parser.
+
+```bash
+$ npm install express body-parser --save
+```
+
+Create a `.js` file, and instantiate express and listen the server to port 3000. Because you have set your ngrok to expose localhost:3000, you must stick with the same port.
+
+```javascript
+'use strict';
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+const server = app.listen(3000, () => {
+  console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
+});
+```
+
+Now, create a HTTP POST route to handle the requests:
+
+```javascript
+app.post('/inbound', (req, res) => {
+  handleParams(req.body, res);
+});
+```
+
+Then define the `handleParams` function:
+
+```javascript
+function handleParams(params, res) {
+  if (!params.to || !params.msisdn) {
+    console.log('This is not a valid inbound SMS message!');
+  } else {
+    console.log('Success');
+    let incomingData = {
+      messageId: params.messageId,
+      from: params.msisdn,
+      text: params.text,
+      type: params.type,
+      timestamp: params['message-timestamp']
+    };
+    res.send(incomingData);
+  }
+  res.status(200).end();
+}
+```
+
+Let's run the node code, and try sending some messages from your phone to your virtual number!
+
+![screenshot of a user sending a sms message from an Android phone](https://www.nexmo.com/wp-content/uploads/2016/10/screenshot-sending-sms.gif)
+
+When you are tunneling your local app with ngrok, you can also inspect the request at [http://127.0.0.1:4040/](http://127.0.0.1:4040/) on your browser:
+
+![ngrok inspector](https://www.nexmo.com/wp-content/uploads/2016/10/ngrok-inspector.png)
+
+Voilà, now you can see your SMS message has been sent, Nexmo has received the message and passed it on to your express application via a webhook!
+
+If you take a look at the [code sample in GitHub](https://github.com/nexmo-community/nexmo-node-quickstart), you will notice the extra example - a persist data storage (like the HTML5 Local Storage, but for Node) and the incoming data is stored with each key (message ID) and values. That way, you can set up a `/inbound/:id` route parameter as named URL segment. For instance, when you access http://localhost:3000/inbound/080000001947F7B2, it returns:
+
+```bash
+{"messageId":"080000001947F7B2","from":"14159873202","text":"Yo!","type":"text","timestamp":"2016-10-26 17:47:26"}
+```
+
+In reality, you should set up a real DB, rather than the data storage.
+
+I hope you find this useful. Let me know, I'm [@girlie_mac on Twitter](https://twitter.com/girlie_mac).
+
+## References
+
+* Nexmo SMS REST API [https://docs.nexmo.com/messaging/sms-api](https://docs.nexmo.com/messaging/sms-api)
+
+* Nexmo Webhooks [https://docs.nexmo.com/messaging/setup-callbacks](https://docs.nexmo.com/messaging/setup-callbacks)
+
+* Ngrok [https://ngrok.com/](https://ngrok.com/)
+
