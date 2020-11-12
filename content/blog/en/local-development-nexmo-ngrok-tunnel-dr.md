@@ -13,17 +13,17 @@ tags:
   - ngrok
 comments: true
 redirect: ""
-canonical: https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr
+canonical: ""
 ---
 Often when [developing demos for conferences](https://www.nexmo.com/blog/2016/12/19/streaming-calls-to-a-browser-with-voice-websockets-dr/), writing [blog posts and “how-tos”](https://www.nexmo.com/?s=how+to) or [creating a guide for our developer portal](https://developer.nexmo.com/) we need to expose our local developer environment to the public internet so that it is reachable by the Vonage APIs.
 
-<a href="https://ngrok.com"><img src="https://www.nexmo.com/wp-content/uploads/2017/07/webhooks.png" alt="ngrok diagram" class="alignnone size-full wp-image-14623" /></a>
+![ngrok diagra](/content/blog/connect-your-local-development-server-to-the-nexmo-api-using-an-ngrok-tunnel/webhooks.png "ngrok diagra")
 
 ## Why do we use ngrok?
 
 Our developer relations team is remote, and often travelling so sometimes we’re working from home, or we might be in our office in London or in a coffee shop. In order to receive inbound webhooks we would need to set up a local server, forward the correct ports, ensure the DNS has our new public IP and is propagated, configure SSL, and so on. This is not only impractical but probably impossible in certain situations. But with [ngrok](https://ngrok.com/) we can expose our local server, on its own subdomain with https support in a single command.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2017/07/media-20170704.png" alt="ngrok in terminal" class="alignnone size-full wp-image-14629" />
+![ngrok in terminal](/content/blog/connect-your-local-development-server-to-the-nexmo-api-using-an-ngrok-tunnel/media-20170704.png "ngrok in terminal")
 
 > **Please do note however if you are on a corporate network you should not be creating any remote tunnels without first running it past your network administrator. Check the section below on security concerns for more details.**
 
@@ -54,7 +54,7 @@ As ngrok runs in your terminal you will likely need to have a terminal window op
 
 One of the most useful features of ngrok is the ability to replay requests.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2017/07/media-20170704-1.png" alt="ngrok web console" class="alignnone size-full wp-image-14632" />
+![ngrok web console](/content/blog/connect-your-local-development-server-to-the-nexmo-api-using-an-ngrok-tunnel/media-20170704-1.png "ngrok web console")
 
 When you start ngrok one of the URLs listed is for the web interface. This web interface runs locally on your machine, normally on port 4040 and it provides a whole swathe of information about your running tunnel include metrics about requests.
 
