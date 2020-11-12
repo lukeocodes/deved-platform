@@ -1,7 +1,8 @@
 ---
 title: How to Send and Receive SMS Messages With Node.js and Express
-description: A step-by-step tutorial on how to receive SMS messages and write a
-  webhook with Node.js and ExpressJS using the Nexmo SMS API.
+description: An in-depth tutorial that demonstrates how to send SMS text
+  messages and receive replies using the Vonage APIs, Node.js and the Express
+  framework.
 thumbnail: /content/blog/how-to-send-and-receive-sms-messages-with-node-js-and-express-dr/SMS-Node-Express_1200x600.jpg
 author: laka
 published: true
