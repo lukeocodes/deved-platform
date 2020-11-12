@@ -20,7 +20,7 @@ replacement_url: https://learn.vonage.com/blog/2019/09/16/how-to-send-and-receiv
 ---
 *This is the second article in a series of “Getting Started with Vonage and Node.js” tutorials.*
 
-In the previous article, you set up your Vonage account and learned [how to send SMS messages with Node.js](/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr/). In this article, you will learn about receiving an inbound SMS by implementing a webhook endpoint in Node.js using [Express](http://expressjs.com/).
+In the previous article, you set up your Vonage account and learned [how to send SMS messages with Node.js](https://learn.vonage.com/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr/). In this article, you will learn about receiving an inbound SMS by implementing a webhook endpoint in Node.js using [Express](http://expressjs.com/).
 
 <img style="width: 32px;height: 32px" src="https://www.nexmo.com/wp-content/uploads/2016/10/GitHub-Mark-64px.png" alt="GitHub icon" /> **View** **[the source code on GitHub](https://github.com/Vonage/vonage-node-code-snippets/blob/master/sms/receive-express.js)**
 
