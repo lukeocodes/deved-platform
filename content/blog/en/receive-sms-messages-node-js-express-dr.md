@@ -22,7 +22,7 @@ replacement_url: https://learn.vonage.com/blog/2019/09/16/how-to-send-and-receiv
 
 In the previous article, you set up your Vonage account and learned [how to send SMS messages with Node.js](/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr/). In this article, you will learn about receiving an inbound SMS by implementing a webhook endpoint in Node.js using [Express](http://expressjs.com/).
 
-<img style="width: 32px;height: 32px" src="https://www.nexmo.com/wp-content/uploads/2016/10/GitHub-Mark-64px.png" alt="GitHub icon" /> **View** **[the source code on GitHub](https://github.com/nexmo-community/nexmo-node-quickstart/blob/master/sms/receive-express.js)**
+<img style="width: 32px;height: 32px" src="https://www.nexmo.com/wp-content/uploads/2016/10/GitHub-Mark-64px.png" alt="GitHub icon" /> **View** **[the source code on GitHub](https://github.com/Vonage/vonage-node-code-snippets/blob/master/sms/receive-express.js)**
 
 ## Defining a Webhook Endpoint
 
@@ -116,7 +116,7 @@ When you are tunneling your local app with ngrok, you can also inspect the reque
 
 Voilà, now you can see your SMS message has been sent, Vonage has received the message and passed it on to your express application via a webhook!
 
-If you take a look at the [code sample in GitHub](https://github.com/nexmo-community/nexmo-node-quickstart), you will notice the extra example - a persist data storage (like the HTML5 Local Storage, but for Node) and the incoming data is stored with each key (message ID) and values. That way, you can set up a `/inbound/:id` route parameter as named URL segment. For instance, when you access http://localhost:3000/inbound/080000001947F7B2, it returns:
+If you take a look at the [code sample in GitHub](https://github.com/Vonage/vonage-node-code-snippets), you will notice the extra example - a persist data storage (like the HTML5 Local Storage, but for Node) and the incoming data is stored with each key (message ID) and values. That way, you can set up a `/inbound/:id` route parameter as named URL segment. For instance, when you access http://localhost:3000/inbound/080000001947F7B2, it returns:
 
 ```bash
 {"messageId":"080000001947F7B2","from":"14159873202","text":"Yo!","type":"text","timestamp":"2016-10-26 17:47:26"}
