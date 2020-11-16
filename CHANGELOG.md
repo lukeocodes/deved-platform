@@ -1,3 +1,58 @@
+# [1.7.0](https://github.com/Nexmo/deved-platform/compare/v1.6.0...v1.7.0) (2020-11-13)
+
+
+### Bug Fixes
+
+* fixes [#357](https://github.com/Nexmo/deved-platform/issues/357) preview builds for non-blog posts fail ([e52a677](https://github.com/Nexmo/deved-platform/commit/e52a677a91051ab7889818ddd6bb8e39143a6574))
+* **opensearch:** fix search.xml contents ([5b79a9b](https://github.com/Nexmo/deved-platform/commit/5b79a9bbdb3bd9f855b597b6be77ae51742f6692))
+* fix lint warnings in PRs ([1a6f2e0](https://github.com/Nexmo/deved-platform/commit/1a6f2e04f76e18da3153707bf8f2604965e33887))
+
+
+### Features
+
+* **i18n:** fix [#375](https://github.com/Nexmo/deved-platform/issues/375) translation issue for italian blog page title ([b702427](https://github.com/Nexmo/deved-platform/commit/b7024272692a7734bbe68c0744357d6eca2d4ff2))
+
+# [1.6.0](https://github.com/Nexmo/deved-platform/compare/v1.5.0...v1.6.0) (2020-11-12)
+
+
+### Bug Fixes
+
+* 404 error handling on slugs ([2f83b37](https://github.com/Nexmo/deved-platform/commit/2f83b37d29ec5802e9fd7b156f0fc6f77cffbad7))
+* i18n switch issue ([71ff2ba](https://github.com/Nexmo/deved-platform/commit/71ff2ba6553153bf149c0dca0520376f3c8741f5))
+
+
+### Features
+
+* **i18n:** better 404 handling for missing translations ([#366](https://github.com/Nexmo/deved-platform/issues/366)) ([806a387](https://github.com/Nexmo/deved-platform/commit/806a38786587e522487bf96750e4ad06c5f72da9))
+
+# [1.5.0](https://github.com/Nexmo/deved-platform/compare/v1.4.3...v1.5.0) (2020-11-11)
+
+
+### Features
+
+* **cms:** add editor components for youtube and sign-up ([#365](https://github.com/Nexmo/deved-platform/issues/365)) ([f46ecec](https://github.com/Nexmo/deved-platform/commit/f46ececae656467bbb28929975e685260f89505e))
+
+## [1.4.3](https://github.com/Nexmo/deved-platform/compare/v1.4.2...v1.4.3) (2020-11-11)
+
+
+### Bug Fixes
+
+* **authors:** remove wp-content urls from authors ([b68be9d](https://github.com/Nexmo/deved-platform/commit/b68be9d8e72b43cee69cd077fee1568352d865a5))
+
+## [1.4.2](https://github.com/Nexmo/deved-platform/compare/v1.4.1...v1.4.2) (2020-11-11)
+
+
+### Bug Fixes
+
+* fixes [#238](https://github.com/Nexmo/deved-platform/issues/238) move map to site config and use map from config in tag query AND tag component ([#360](https://github.com/Nexmo/deved-platform/issues/360)) ([6ecf7a0](https://github.com/Nexmo/deved-platform/commit/6ecf7a02b7719932a8b1d4c28baa8e654256c2d8))
+
+## [1.4.1](https://github.com/Nexmo/deved-platform/compare/v1.4.0...v1.4.1) (2020-11-11)
+
+
+### Bug Fixes
+
+* tag link and backtotop issues  ([#359](https://github.com/Nexmo/deved-platform/issues/359)) ([69edc24](https://github.com/Nexmo/deved-platform/commit/69edc24828c0f1e60e82821a9da5ece5205ee3e3)), closes [#224](https://github.com/Nexmo/deved-platform/issues/224) [#223](https://github.com/Nexmo/deved-platform/issues/223)
+
 # [1.4.0](https://github.com/Nexmo/deved-platform/compare/v1.3.2...v1.4.0) (2020-11-10)
 
 
